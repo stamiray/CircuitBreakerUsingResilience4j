@@ -34,19 +34,16 @@ public class App1 implements CBService1 {
         //supplier
         Supplier<Integer> supplier = CircuitBreaker.decorateSupplier(circuitBreaker, cbService::callService);
 
-        //call the method
+        /**1.Call the method
+         * 2.The lambda expression is not a fallback, but more like for each supplier response we can customize the output
+         */
         Supplier<Integer> supplierWithResultHandling = SupplierUtils.andThen(supplier,  result -> {
             if (result == 400) {
                 System.out.println("Customize 400 response");
             } else if (result == 500) {
-                System.out.println("Customize 400 response");
-            }
-            try {
-                if (cbService.getName().equalsIgnoreCase("six") || cbService.getName().equalsIgnoreCase("nine")) {
-                    Thread.sleep(5000);
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("Customize 500 response");
+            }else{
+                //
             }
             return result;
         });

@@ -1,12 +1,12 @@
-package stami.sap.circuitBreakerDemo;
+package stami.sap.circuitBreakerUsingSpringBoot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CircuitBreakerDemoApplication {
+public class CircuitBreakerUsingSpringBootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CircuitBreakerDemoApplication.class, args);
+		SpringApplication.run(CircuitBreakerUsingSpringBootApplication.class, args);
 	}
 }

@@ -1,4 +1,4 @@
-package stami.sap.demoData;
+package stami.sap.dataService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
 @Controller
-public class DemoDataApplication {
+public class DataServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoDataApplication.class, args);
+		SpringApplication.run(DataServiceApplication.class, args);
 	}
 
 	@RequestMapping("/data")
 	public ResponseEntity<String> data() {
-		return new ResponseEntity<String>( "Hello Ariba, here is your data", HttpStatus.OK);
+		return new ResponseEntity<String>( "Hello SAP Ariba, here is your data", HttpStatus.OK);
 	}
 
 }
